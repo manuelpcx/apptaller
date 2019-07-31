@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marca: MyString
+  model: MyString
+  year: 1
+  diagnostico: MyString
+
+two:
+  marca: MyString
+  model: MyString
+  year: 1
+  diagnostico: MyString

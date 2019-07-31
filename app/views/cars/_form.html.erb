@@ -1,0 +1,63 @@
+<div class="col-md-8 mt-4">
+  <div class="card">
+    <div class="card-body">
+      <%= form_with(model: car, local: true) do |form| %>
+        <% if car.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+            <ul>
+            <% car.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :Cliente %>
+          <%= form.text_field :client, class:'form-control', placeholder: 'Escriba Nombre y Apellido' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :marca %>
+          <%= form.text_field :marca, class:'form-control', placeholder: 'Marca del vehiculo' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :modelo %>
+          <%= form.text_field :model, class:'form-control', placeholder: 'Modelo del vehiculo' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :Año %>
+          <%= form.number_field :year, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :Patente %>
+          <%= form.text_field :ppu, class:'form-control', placeholder: 'Patente del vehiculo' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :Mecanico %>
+          <%= form.text_field :mec, class:'form-control', placeholder: 'Mecanico encargado' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :Motivo %>
+          <%= form.text_area :diagnostico, class:'form-control', placeholder: 'Escriba el motivo por que ingresa' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :Precio %>
+          <%= form.number_field :price, class:'form-control' %>
+        </div>
+        <br>      
+        <div class="btn btn-success">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

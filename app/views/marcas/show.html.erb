@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+  
+  <h1>Marca: <%= @marca.name %> </h1>
+
+  <h2>Modelos</h2>
+  <% @marca.models.each do |model| %>
+    <ul>
+      <li>
+      <%= model.name %>
+      </li>
+    </ul>
+    <% end %>
+
+
+
+<%= form_with(model: [@marca, Model.new], local: true) do |form| %>
+  <%= form.hidden_field :marca_id, value: @marca.id %>
+
+  <div class="field">
+    <%= form.label :modelo %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_marca_path(@marca) %> |
+<%= link_to 'Back', marcas_path %>

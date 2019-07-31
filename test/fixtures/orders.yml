@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payed: false
+  car: one
+  price: 1
+
+two:
+  payed: false
+  car: two
+  price: 1
