@@ -32,14 +32,20 @@
             <td><p>$<%= car.price %></p></td>
             <td><%= link_to 'Listo', car_orders_path(car), class:'btn btn-outline-info', method: :post %></td>
             <td><%= link_to 'Edit', edit_car_path(car), class:'btn btn-success' %></td>
+            <% if can? :destroy, car%>
             <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-warning' %></td>
-          </tr>
+            <% end %>
+            </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  <%= link_to 'New Car', new_car_path, class:'btn btn-outline-danger' %>
-  <%= link_to 'Ordenes', orders_path, class:'btn btn-outline-success float-right' %>
+  <% if can? :new, @cars %>
+    <%= link_to 'New Car', new_car_path, class:'btn btn-outline-danger' %>
+  <% end %>
+  <% if can? :read, Order %>
+    <%= link_to 'Ordenes', orders_path, class:'btn btn-outline-success float-right' %>
+  <% end %>
 </div>
 <br>
 

@@ -14,12 +14,8 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <%= render 'shared/navbar2' %>
+ 
+  <%= render 'shared/navbar2'%>
     <%= yield %>
-  <% else %>
-  <%= render 'shared/navbar'%>
-    <%= yield %>
-  <% end %>
-  </body>
+  
 </html>
